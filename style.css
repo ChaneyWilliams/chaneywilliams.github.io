@@ -7,9 +7,12 @@ html {
     scroll-behavior: smooth;
 }
 
-html, body {
-    background-color: #0b0b0b; /* match your site background */
+html,
+body {
+    background-color: #0b0b0b;
+    /* match your site background */
 }
+
 .header {
     min-height: 100vh;
     width: 100%;
@@ -161,7 +164,7 @@ p {
     margin-bottom: 5%;
     padding: 20px 12px;
     box-sizing: border-box;
-    transition: 
+    transition:
         box-shadow 0.3s ease,
         transform 0.3s ease,
         border-color 0.3s ease;
@@ -188,6 +191,7 @@ h3 {
 .games-col {
     flex: 1;
     min-width: 200px;
+    height: 300px;
     display: flex;
     flex-direction: colum;
     flex-basis: 32%;
@@ -195,6 +199,19 @@ h3 {
     margin-bottom: 30px;
     position: relative;
     overflow: hidden;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    opacity: 1;
+}
+
+.games-col.fade-out {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+
+.games-col.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.4s forwards;
 }
 
 .games-col img {
@@ -265,12 +282,18 @@ h3 {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
 
 /*Tiny Screen stuff*/
 @media(max-width: 500px) {
