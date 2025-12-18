@@ -220,7 +220,7 @@ h3 {
 
 #mouse-tooltip {
     position: fixed;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(50, 50, 50, 0.85);
     color: white;
     padding: 10px 14px;
     border-radius: 6px;
