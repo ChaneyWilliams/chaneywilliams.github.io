@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML FILE</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css">
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/all.min.css">
+
 </head>
 
 <body>
-    <section class="header">
+    <section class="header" id="header">
         <nav>
             <div class="nav-links" id="navLinks">
                 <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
@@ -19,20 +19,29 @@
                     <li><a href="">HOME</a></li>
                     <li><a href="">ABOUT</a></li>
                     <li><a href="#projects">PROJECTS</a></li>
-                    <li><a href="">CONTACT</a></li>
+                    <li><a href="#header">CONTACT</a></li>
                 </ul>
             </div>
-            <i class="fa-solid fa-list" onclick="showMenu()"></i>
+            <i class="fa-solid fa-bars" onclick="showMenu()"></i>
         </nav>
 
         <div class="text-box">
             <h1>Whats happening</h1>
-            <p>Is this working? I have no idea so i'll just keep prodding along till Something
-                clicks in my brain. It is starting to somewhat make sense, like
-                peanut butter and chocolate.
+            <p>A dude with a computer that thinks too much about everything.
             </p>
-            <a href="" class="hero-btn">Visit To Know More</a>
+            <!--a href="" class="hero-btn">Visit To Know More</a-->
+            <div class="row">
+                <div class="contacts">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>someguy@gmail.com</span>
+                </div>
+                <div class="contacts">
+                    <i class="fa-brands fa-github"></i>
+                    <span>SomeGithub</span>
+                </div>
+            </div>
         </div>
+
 
     </section>
 
@@ -46,43 +55,35 @@
         <h1>this will probably work</h1>
         <p>Getting some big WHEEE vibes</p>
         <div class="row">
+    
+            <div class="project-col" >
+                <h3>Projects</h3>
+                <p>Organize by all Projects alphabetically</p>
+            </div>
 
-            <div class="course-col">
-                <h3>Intermediate</h3>
-                <p>Marry Had a little lamb, little lamb. Oh Marry had a little
-                    lamb whose fur was as white as snow. The itsy bitsy spider went up
-                    the water spout. Then down came the rain and flushed the spider
-                    out.
+            <div class="project-col">
+                <h3>Long-Term Games</h3>
+                <p>Organize by Games made in a time span more than one month
                 </p>
             </div>
 
-            <div class="course-col">
-                <h3>WHEEEE</h3>
-                <p>Marry Had a little lamb, little lamb. Oh Marry had a little
-                    lamb whose fur was as white as snow. The itsy bitsy spider went up
-                    the water spout. Then down came the rain and flushed the spider
-                    out.</p>
+            <div class="project-col" >
+                <h3>Short-Term Games</h3>
+                <p>Organize by Games made in a time span less than a month
+                </p>
             </div>
 
-            <div class="course-col">
-                <h3>WHooooo</h3>
-                <p>Marry Had a little lamb, little lamb. Oh Marry had a little
-                    lamb whose fur was as white as snow. The itsy bitsy spider went up
-                    the water spout. Then down came the rain and flushed the spider
-                    out.</p>
-            </div>
         </div>
     </section>
 
     <section class="Games">
-        <h1>Video Game Projects</h1>
-        <p>GETTING BIG BOSS BABY VIBES</p>
+        <!--h1>Video Game Projects</h1>
+        <p>GETTING BIG BOSS BABY VIBES</p-->
 
         <div class="row">
             <div class="games-col">
                 <a href="https://saugamedev.itch.io/shark-trivia" target="_blank">
-                    <img src="Images/SharkTrivia.png" class="hover-img"
-                        data-tooltip="I created the dialogue system that
+                    <img src="Images/SharkTrivia.png" class="hover-img" data-tooltip="I created the dialogue system that
                         easily swaps the fonts of chosen characters as well as the systems
                         that exchanged data between scenes.">
                 </a>
@@ -95,8 +96,10 @@
 
 
 
-    <!-------Javascript for Toggle Menu-------->
+    <!-------Javascript-------->
     <script>
+        /*menu navigation code*/
+
         var navLinks = document.getElementById("navLinks")
         function showMenu() {
             navLinks.style.right = "0";
@@ -104,7 +107,7 @@
         function hideMenu() {
             navLinks.style.right = "-200px";
         }
-
+        /*tooltip hover code*/
         const tooltip = document.getElementById("mouse-tooltip");
 
         document.querySelectorAll(".hover-img").forEach(img => {
@@ -114,8 +117,8 @@
             });
 
             img.addEventListener("mousemove", (e) => {
-                tooltip.style.left = e.clientX  + "px";
-                tooltip.style.top = e.clientY - 125 + "px";
+                tooltip.style.left = e.clientX + "px";
+                tooltip.style.top = e.clientY - 75 + "px";
             });
 
             img.addEventListener("mouseleave", () => {

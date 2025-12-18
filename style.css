@@ -7,16 +7,26 @@ html {
     scroll-behavior: smooth;
 }
 
+html, body {
+    background-color: #0b0b0b; /* match your site background */
+}
 .header {
     min-height: 100vh;
     width: 100%;
     background-image:
         linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
-        url("Images/Space.jpg");
+        url("Images/Night\ Sky\ Stars\ GIF.gif");
 
     background-position: center;
     background-size: cover;
     position: relative;
+
+    animation: fadeSlide 1s ease-out;
+}
+
+.fa-bars,
+.fa-xmark {
+    visibility: hidden;
 }
 
 nav {
@@ -26,7 +36,7 @@ nav {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.85);
     z-index: 999;
-    padding: 15px 20px;
+    padding: 5px 7px;
 }
 
 nav .fa-list {
@@ -36,7 +46,7 @@ nav .fa-list {
 .nav-links ul li {
     list-style-type: none;
     display: inline-block;
-    padding: 8px 12px;
+    padding: 4px 6px;
     position: relateive;
 }
 
@@ -81,6 +91,17 @@ nav .fa-list {
     color: #FFF;
 }
 
+.contacts {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.contacts i {
+    font-size: 20px;
+}
+
 .hero-btn {
     display: inline-block;
     text-decoration: none;
@@ -114,6 +135,7 @@ nav .fa {
 }
 
 h1 {
+    color: #777;
     font-size: 36px;
     font-weight: 600;
 }
@@ -132,14 +154,17 @@ p {
     justify-content: space-between;
 }
 
-.course-col {
+.project-col {
     flex-basis: 31%;
     background: #FFF3F3;
     border-radius: 10px;
     margin-bottom: 5%;
     padding: 20px 12px;
     box-sizing: border-box;
-    transition: 0.5s;
+    transition: 
+        box-shadow 0.3s ease,
+        transform 0.3s ease,
+        border-color 0.3s ease;
 }
 
 h3 {
@@ -149,9 +174,12 @@ h3 {
 
 }
 
-.course-col:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+.project-col:hover {
+    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.25);
+    border-color: #ff0000;
+    transform: translateY(-8px) scale(1.03);
 }
+
 
 .Games {
     text-align: center;
@@ -226,8 +254,31 @@ h3 {
     opacity: 1;
 }
 
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 /*Tiny Screen stuff*/
 @media(max-width: 500px) {
+
+    .fa-bars,
+    .fa-xmark {
+        color: white;
+        visibility: visible;
+    }
+
+    #mouse-tooltip {
+        visibility: hidden;
+    }
+
     nav {
         display: flex;
         padding: 2% 6%;
@@ -245,7 +296,7 @@ h3 {
 
     .nav-links {
         position: absolute;
-        background: #3646f4;
+        background: #060a39;
         height: 100vh;
         width: 200px;
         top: 0;
