@@ -1,5 +1,4 @@
 /*menu navigation code*/
-
 var navLinks = document.getElementById("navLinks")
 function showMenu() {
     navLinks.style.right = "0";
@@ -25,3 +24,4 @@ document.querySelectorAll(".hover-img").forEach(img => {
         tooltip.style.opacity = "0";
     });
 });
+

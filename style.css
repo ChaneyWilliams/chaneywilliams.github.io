@@ -186,6 +186,10 @@ h3 {
 }
 
 .games-col {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: colum;
     flex-basis: 32%;
     border-radius: 10px;
     margin-bottom: 30px;
@@ -194,7 +198,9 @@ h3 {
 }
 
 .games-col img {
-    width: 100%;
+    width: 300px;
+    height: 200px;
+    object-fit: 200px;
     display: block;
     transition: transform 0.5s ease-out;
 }
